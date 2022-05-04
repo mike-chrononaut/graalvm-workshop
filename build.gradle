@@ -1,0 +1,27 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+group 'ru.workshop'
+version '2.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+ext {
+    javaMainClass = "ru.workshop.calculator.SequenceCalculator"
+}
+
+application {
+    mainClassName = javaMainClass
+}
+
+jar {
+    manifest {
+        attributes(
+                "Main-Class": javaMainClass
+        )
+    }
+}
