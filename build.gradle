@@ -1,17 +1,18 @@
 plugins {
     id 'java'
     id 'application'
+    id 'org.graalvm.buildtools.native' version '0.9.11'
 }
 
 group 'ru.workshop'
-version '2.0-SNAPSHOT'
+version '3.0-SNAPSHOT'
 
 repositories {
     mavenCentral()
 }
 
 ext {
-    javaMainClass = "ru.workshop.calculator.SequenceCalculator"
+    javaMainClass = "ru.workshop.App"
 }
 
 application {
@@ -23,5 +24,17 @@ jar {
         attributes(
                 "Main-Class": javaMainClass
         )
+    }
+}
+
+graalvmNative {
+    toolchainDetection = false
+
+    useArgFile = false
+    binaries {
+        main {
+            useFatJar = true
+            mainClass = javaMainClass
+        }
     }
 }
