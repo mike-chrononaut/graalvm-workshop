@@ -1,0 +1,3 @@
+workshop:
+  path: 'D:\projects\workshops\graalvm-workshop\jsExecutor'
+  name: 'executor'

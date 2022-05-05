@@ -1,0 +1,6 @@
+version: '3.1'
+services:
+  rest-service:
+    image: graalvm-workshop:5.2-SNAPSHOT
+    ports:
+      - "8080:8080"
